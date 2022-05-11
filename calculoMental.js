@@ -1,6 +1,7 @@
 //let operaciones = [22][5];
 var operaciones = new Array(22);
 let introducido;
+let aciertos = 0;
 let fallos = 0;
 //fecha horaInicial
 //fecha horaFinal
@@ -80,62 +81,62 @@ function jugar() {
         
     //event.stopPropagation();
 
-    $('#introducido').keyup(delay(function (e) {
-        console.log('Tiempo agotado. Se ha escrito:', this.value);
     
-
-        if(_self.i <= 10) {
-
-            //recoger numero introducido
-            _self.introducido = document.getElementById("introducido").value;
-
-            //document.write( introducido );
-            _self.operaciones[i][4] = _self.introducido;
-
-            //si no se han introducido las cifras suficientes, no hacer nada
-            if(_self.introducido.toString().length == operaciones[i][3].toString().length) {
-
-                //comprobar si la respuesta es correcta:
-                if (_self.introducido == operaciones[i][3]) {
-                    
-                        
-                        //mostar tick
-                        document.getElementById("correctoOno").innerHTML = "✔️";
-                        tiempoDeEspera = 500;
-                    
-                    
-                //si la respuesta no es correcta:
-                } else {
-
-                    if (_self.introducido != null) {
-
-                        //para que el contador de fallos solo aumente cuando se ha pulsado una tecla numérica
-                        //const isNumber = /^[0-9]$/i.test(event.key)
-                        //if (isNumber) {
-                    
-                            //mostrar equis
-                            document.getElementById("correctoOno").innerHTML = "❌";
-                            //document.write( "❌" );
-                            fallos++;
-                            tiempoDeEspera = 2000;
-                        
+    $("#introducido").keypress(function(event) {
+        if (event.keyCode === 13) {
             
-                            //esperar unos segundos y limpiar el input
-                            //document.getElementById("correctoOno").innerHTML = "  ";
-                                        
-                        //}
+            
+
+                //recoger numero introducido
+                _self.introducido = document.getElementById("introducido").value;
+
+                //document.write( introducido );
+                _self.operaciones[i][4] = _self.introducido;
+
+                //si no se han introducido las cifras suficientes, no hacer nada
+                if(_self.introducido.toString().length == operaciones[i][3].toString().length) {
+
+                    //comprobar si la respuesta es correcta:
+                    if (_self.introducido == operaciones[i][3]) {
+                        
+                            //mostar tick
+                            document.getElementById("correctoOno").innerHTML = "✔️";
+                            aciertos++;
+                        
+                    //si la respuesta no es correcta:
+                    } else {
+
+                        if (_self.introducido != null) {
+
+                            //para que el contador de fallos solo aumente cuando se ha pulsado una tecla numérica
+                            //const isNumber = /^[0-9]$/i.test(event.key)
+                            //if (isNumber) {
+                        
+                                //mostrar equis
+                                document.getElementById("correctoOno").innerHTML = "❌";
+                                //document.write( "❌" );
+                                fallos++;
+                                
+                                //esperar unos segundos y limpiar el input
+                                //document.getElementById("correctoOno").innerHTML = "  ";
+                                            
+                            //}
+                        }
                     }
                 }
+
+            if(_self.i <= 10) {
+                
+                siguienteOperacion();
+
+            } else {
+                //si el contador ha llegado a 10, el juego termina
+                document.write("el juego ha terminado <br> Numero de fallos: "+fallos+"<br> Numero de aciertos: "+aciertos);
             }
-
-            siguienteOperacion();
-
-        } else {
-            //si el contador ha llegado a 10, el juego termina
-            document.write("el juego ha terminado");
-        }
     
-    }, tiempoDeEspera));
+        }
+    });
+
 //});
 
 ///////////////////////////   temporizador y mostrar resultados /////////////
@@ -162,51 +163,12 @@ for (let i = 0; i < records.length; i++) {
 
 ///////////////////////FUNCIONES NO PRINCIPALES//////////////////////
 
-//comprobar resultado
-function comprobarResultado() {
-    var tiempoDeEspera;
-
-    //recoger numero introducido
-    _self.introducido = document.getElementById("introducido").value;
-
-    //document.write( introducido );
-    _self.operaciones[i][4] = _self.introducido;
-
-    //si no se han introducido las cifras suficientes, no hacer nada
-    if(_self.introducido.toString().length == operaciones[i][3].toString().length) {
-
-        //comprobar si la respuesta es correcta:
-        if (_self.introducido == operaciones[i][3]) {
-            
-            tiempoDeEspera = 500;
-            
-        //si la respuesta no es correcta:
-        } else {
-
-            if (_self.introducido != null) {
-
-                //para que el contador de fallos solo aumente cuando se ha pulsado una tecla numérica
-                //const isNumber = /^[0-9]$/i.test(event.key)
-                //if (isNumber) {
-               
-                    tiempoDeEspera = 2000;
-                  
-                    //esperar unos segundos y limpiar el input
-                    //document.getElementById("correctoOno").innerHTML = "  ";
-                                
-                //}
-            }
-        }
-    }
-
-    return tiempoDeEspera;
-}
-
 //pasar a la siguiente operación
 function siguienteOperacion() {
-    document.getElementById("correctoOno").innerHTML = "  ";
+    //document.getElementById("correctoOno").innerHTML = "  ";
     let campoTexto = document.getElementById("introducido").value = null;
 
+    document.getElementById("aciertos").innerHTML = "aciertos: "+aciertos;
     document.getElementById("fallos").innerHTML = "fallos: "+fallos;
 
     _self.i++;
