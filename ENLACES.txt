@@ -1,0 +1,9 @@
+https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing
+
+https://www.google.es/search?q=javascript+wait+until+key+press+or+timeout&source=hp&ei=5bp4YvPOOZKChbIPsaqz4AQ&iflsig=AJiK0e8AAAAAYnjI9YZ6AGhTPa--ySF0XOfxNlQUKnGA&ved=0ahUKEwiz1dyO69H3AhUSQUEAHTHVDEwQ4dUDCAk&uact=5&oq=javascript+wait+until+key+press+or+timeout&gs_lcp=Cgdnd3Mtd2l6EAM6CAgAELEDEIMBOggILhCxAxCDAToLCC4QgAQQsQMQgwE6DgguEIAEELEDEMcBEKMCOhEILhCABBCxAxCDARDHARDRAzoLCC4QgAQQxwEQowI6CAgAEIAEELEDOggILhCABBCxAzoLCC4QgAQQsQMQ1AI6BQguEIAEOgsIABCABBCxAxCDAToOCC4QgAQQsQMQgwEQ1AI6BQgAEIAEOgYIABAWEB46CAghEBYQHRAeOgQIABATOggIABAWEB4QEzoECAAQDToFCCEQoAE6BwghEAoQoAFQAFid0ARgk9MEaCBwAHgAgAGPA4gB_i-SAQkxNi4zNi4xLjGYAQCgAQE&sclient=gws-wiz
+
+
+https://www.youtube.com/c/VidaMRR/videos?view=0&sort=p&flow=grid
+
+//sistema de login completo usando sesiones. PHP y MySQL
+https://www.youtube.com/watch?v=Tb-_cEAsp4s

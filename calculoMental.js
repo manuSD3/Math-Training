@@ -1,3 +1,5 @@
+document.getElementById("introducido").style.display = 'none';
+
 //let operaciones = [22][5];
 var operaciones = new Array(22);
 let introducido;
@@ -33,6 +35,8 @@ function delay(callback, ms) {
 
 function jugar() {
     
+    document.getElementById("introducido").style.display = '';
+    document.getElementById("boton-jugar").style.display = 'none';
     
     operaciones[0] = [' ',' ',' ',' ',' '];
     //generar 20 operaciones
@@ -100,7 +104,7 @@ function jugar() {
                     if (_self.introducido == operaciones[i][3]) {
                         
                             //mostar tick
-                            document.getElementById("correctoOno").innerHTML = "✔️";
+                            document.getElementById("correctoOno").innerHTML = "<img src='./img/accept.png'  class='feedback'/>";
                             aciertos++;
                         
                     //si la respuesta no es correcta:
@@ -111,9 +115,9 @@ function jugar() {
                             //para que el contador de fallos solo aumente cuando se ha pulsado una tecla numérica
                             //const isNumber = /^[0-9]$/i.test(event.key)
                             //if (isNumber) {
-                        
+                                
                                 //mostrar equis
-                                document.getElementById("correctoOno").innerHTML = "❌";
+                                document.getElementById("correctoOno").innerHTML = "<img src='./img/delete-button.png'  class='feedback'/>";
                                 //document.write( "❌" );
                                 fallos++;
                                 
@@ -125,7 +129,7 @@ function jugar() {
                     }
                 }
 
-            if(_self.i <= 10) {
+            if(_self.i < 10) {
                 
                 siguienteOperacion();
 
