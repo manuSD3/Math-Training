@@ -7,3 +7,12 @@ https://www.youtube.com/c/VidaMRR/videos?view=0&sort=p&flow=grid
 
 //sistema de login completo usando sesiones. PHP y MySQL
 https://www.youtube.com/watch?v=Tb-_cEAsp4s
+
+
+
+//para probar con el marcar error automático. Quién sabe si con esto se podrá hacer.
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_settimeout2
+
+
+//temporizador
+https://codepen.io/janio/pen/wGOGRa

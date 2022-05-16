@@ -1,0 +1,19 @@
+CREATE DATABASE MathTraining;
+CREATE DATABASE MathTraining CHARACTER SET utf8;
+
+USE MathTraining;
+
+CREATE TABLE Usuarios (
+    nombre VARCHAR(255) PRIMARY KEY,
+    contrasena VARCHAR(16)
+);
+
+CREATE TABLE Puntuaciones (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha VARCHAR(100),
+    tiempoEmpleado INT(100),
+    nombreUsuario VARCHAR(255),
+    CONSTRAINT FK_Usuario
+    FOREIGN KEY (nombreUsuario) 
+        REFERENCES Usuarios(nombre)
+)

@@ -1,3 +1,6 @@
+
+
+
 document.getElementById("introducido").style.display = 'none';
 
 //let operaciones = [22][5];
@@ -35,6 +38,9 @@ function delay(callback, ms) {
 
 function jugar() {
     
+    var startTime, endTime;
+    startTime = performance.now();
+
     document.getElementById("introducido").style.display = '';
     document.getElementById("boton-jugar").style.display = 'none';
     
@@ -142,6 +148,16 @@ function jugar() {
     });
 
 //});
+
+    endTime = performance.now();
+    var timeDiff = endTime - startTime; //in ms 
+    // strip the ms 
+    timeDiff /= 1000; 
+
+    // get seconds 
+    var seconds = Math.round(timeDiff);
+    console.log(seconds + " seconds");
+
 
 ///////////////////////////   temporizador y mostrar resultados /////////////
 //horaFinal = hora actual
