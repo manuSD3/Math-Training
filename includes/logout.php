@@ -1,4 +1,6 @@
 <?php
+//clase que se encarga de cerrar la sesión
+
     //importar la clase user session
     include_once 'user_session.php';
 

@@ -1,4 +1,8 @@
 <?php
+
+//fichero al que dirige por defecto el navegador
+//se encarga de redirigir a los otros ficheros, dependiendo de si la sesión está iniciada o no
+
 //incluir librerias
 include_once 'includes/user.php';
 include_once 'includes/user_session.php';

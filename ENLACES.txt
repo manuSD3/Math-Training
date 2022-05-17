@@ -16,3 +16,10 @@ https://www.w3schools.com/js/tryit.asp?filename=tryjs_settimeout2
 
 //temporizador
 https://codepen.io/janio/pen/wGOGRa
+
+
+//paleta de colores
+#11ABC1
+#DF3062
+#F5B935
+#4BAC3F

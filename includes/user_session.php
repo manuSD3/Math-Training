@@ -1,5 +1,5 @@
 <?php
-
+//clase que se encarga de gestionar la sesión
 class UserSession{
 
     public function __construct(){

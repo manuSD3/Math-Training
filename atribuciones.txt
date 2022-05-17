@@ -3,3 +3,9 @@ imagen tick
 
 imagen equis
 <a href="https://www.flaticon.com/free-icons/cancel" title="cancel icons">Cancel icons created by hqrloveq - Flaticon</a>
+
+iconos
+https://www.flaticon.es/icon-font-gratis/estadisticas_3916763
+https://www.flaticon.es/icon-font-gratis/usuario_3917711
+https://www.flaticon.es/icon-font-gratis/cruzar_3917188
+https://www.flaticon.es/icon-font-gratis/ajustes_3917051

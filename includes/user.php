@@ -1,4 +1,5 @@
 <?php
+//objeto usuario
 //importar la clase db
 include_once 'db.php';
 
@@ -10,13 +11,13 @@ class User extends DB{
     //comprobar que el usuario existe
     public function userExists($nombre, $contrasena){
         //hacerle un hash a la contraseña
-        $md5pass = md5($contrasena);
+        //$md5pass = md5($contrasena);
         
         //consulta para extraer el nombre de usuario
         $query = $this->connect()->prepare('SELECT * FROM usuarios WHERE nombre = :nombre AND contrasena = :contrasena');
 
         //ejecutar la consulta
-        $query->execute(['nombre' => $nombre, 'contrasena' => $md5pass]);
+        $query->execute(['nombre' => $nombre, 'contrasena' => $contrasena]);
 
         //si devuelve alguna fila significa que existe, así que devuelve true.
         if($query->rowCount()){

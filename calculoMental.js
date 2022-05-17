@@ -1,7 +1,13 @@
-
-
-
+document.getElementById("texto1").style.display = 'none';
 document.getElementById("introducido").style.display = 'none';
+document.getElementById("mensaje-final").style.display = 'none';
+
+/* document.getElementById("operacion").style.display = '';
+document.getElementById("texto1").style.display = '';
+document.getElementById("introducido").style.display = 'none';
+document.getElementById("correctoOno").style.display = 'none';
+document.getElementById("mensaje-final").style.display = ''; */
+
 
 //let operaciones = [22][5];
 var operaciones = new Array(22);
@@ -19,7 +25,7 @@ var i = 1;
 var _self = this;
 
 var tiempoDeEspera;
-
+/*
 function delay(callback, ms) {
     var timer = 0;
     return function() {
@@ -30,7 +36,7 @@ function delay(callback, ms) {
       }, ms || 0);
     };
   }
-  
+*/
 /* $('#introducido').keyup(delay(function (e) {
     console.log('Time elapsed!', this.value);
 }, 500)); */
@@ -41,6 +47,7 @@ function jugar() {
     var startTime, endTime;
     startTime = performance.now();
 
+    document.getElementById("texto1").style.display = '';
     document.getElementById("introducido").style.display = '';
     document.getElementById("boton-jugar").style.display = 'none';
     
@@ -95,8 +102,6 @@ function jugar() {
     $("#introducido").keypress(function(event) {
         if (event.keyCode === 13) {
             
-            
-
                 //recoger numero introducido
                 _self.introducido = document.getElementById("introducido").value;
 
@@ -104,7 +109,7 @@ function jugar() {
                 _self.operaciones[i][4] = _self.introducido;
 
                 //si no se han introducido las cifras suficientes, no hacer nada
-                if(_self.introducido.toString().length == operaciones[i][3].toString().length) {
+                //if(_self.introducido.toString().length === operaciones[i][3].toString().length) {
 
                     //comprobar si la respuesta es correcta:
                     if (_self.introducido == operaciones[i][3]) {
@@ -116,7 +121,7 @@ function jugar() {
                     //si la respuesta no es correcta:
                     } else {
 
-                        if (_self.introducido != null) {
+                        //if (_self.introducido != null) {
 
                             //para que el contador de fallos solo aumente cuando se ha pulsado una tecla numérica
                             //const isNumber = /^[0-9]$/i.test(event.key)
@@ -131,9 +136,9 @@ function jugar() {
                                 //document.getElementById("correctoOno").innerHTML = "  ";
                                             
                             //}
-                        }
+                        //}
                     }
-                }
+                //}
 
             if(_self.i < 10) {
                 
@@ -141,7 +146,13 @@ function jugar() {
 
             } else {
                 //si el contador ha llegado a 10, el juego termina
-                document.write("el juego ha terminado <br> Numero de fallos: "+fallos+"<br> Numero de aciertos: "+aciertos);
+                document.getElementById("operacion").style.display = 'none';
+                document.getElementById("texto1").style.display = 'none';
+                document.getElementById("introducido").style.display = 'none';
+                document.getElementById("correctoOno").style.display = 'none';
+                document.getElementById("mensaje-final").style.display = '';
+                
+                document.getElementById("mensaje-final").innerHTML= ("el juego ha terminado <br> Numero de fallos: "+fallos+"<br> Numero de aciertos: "+aciertos);
             }
     
         }
@@ -159,7 +170,7 @@ function jugar() {
     console.log(seconds + " seconds");
 
 
-///////////////////////////   temporizador y mostrar resultados /////////////
+//////////////// temporizador y mostrar resultados /////////////
 //horaFinal = hora actual
 /* 
     //mostrar resultados
