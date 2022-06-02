@@ -23,3 +23,22 @@ https://codepen.io/janio/pen/wGOGRa
 #DF3062
 #F5B935
 #4BAC3F
+
+//alternativa al menu
+https://www.w3schools.com/howto/howto_js_collapse_sidepanel.asp
+
+//interfaz original
+https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+
+
+//para los gráficos (SLOT MACHINE)
+		//posiblemente este sea el que mejor se asemeja a lo que quiero y el más simple
+https://stackoverflow.com/questions/32080077/how-to-create-a-vertical-carousel-using-plain-javascript-and-css
+		//otro más complicado pero si consigo manejarlo quedaría realmente chulo
+https://webdesignerwall.com/wdw-snippet/vertical-carousel
+
+https://codepen.io/cnbkts/pen/QMXPZM
+http://jsfiddle.net/mlotfi/ouehmy12/
+https://josex2r.github.io/jQuery-SlotMachine/
+https://www.cssscript.com/vertical-text-rotator/
+

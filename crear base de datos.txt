@@ -1,19 +1,35 @@
-CREATE DATABASE MathTraining;
 CREATE DATABASE MathTraining CHARACTER SET utf8;
 
 USE MathTraining;
 
 CREATE TABLE Usuarios (
-    nombre VARCHAR(255) PRIMARY KEY,
-    contrasena VARCHAR(16)
+    email VARCHAR(255) PRIMARY KEY,
+    nombre VARCHAR(255),
+    contraseña VARCHAR(255),
+    telefono int (9),
+    /*contraseña varchar (255)*/
+    /* Sexo: H (hombres), M(mujer), I(Intersexual)*/
+    sexo varchar(1)
 );
 
 CREATE TABLE Puntuaciones (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    fecha VARCHAR(100),
-    tiempoEmpleado INT(100),
-    nombreUsuario VARCHAR(255),
+    /*fecha VARCHAR(100),*/
+    fecha TIMESTAMP NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    tiempoEmpleado DECIMAL(12,2),
+    emailUsuario VARCHAR(255),
     CONSTRAINT FK_Usuario
-    FOREIGN KEY (nombreUsuario) 
-        REFERENCES Usuarios(nombre)
+    FOREIGN KEY (emailUsuario) 
+        REFERENCES Usuarios(email)
 )
+
+
+
+//////////////////////TESTEO
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-05-30 02:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-05-29 02:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-05-28 02:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-05-27 02:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-05-26 02:20:55', 81.15, 'manuerubstep@gmail.com')

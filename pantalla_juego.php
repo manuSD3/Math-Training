@@ -1,43 +1,17 @@
-<!--
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <div id="menu">
-        <ul>
-            <li>Home</li>
-            <li class="cerrar-sesion">
-                <a href="includes/logout.php">Cerrar sesión</a>
-            </li>
-        </ul>
-    </div>
+  <meta charset="UTF-8">
 
-    <section>
-        <h1>Bienvenido <?php //echo $user->getNombre(); ?> </h1>
-    </section>
-    
-</body>
-</html>
--->
-
-<!--
-
-    Página principal a la que se redirige cuando se inicia sesión satisfactoriamente
-
--->
-
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../estilos/estilo.css">
+<link rel="stylesheet" href="./estilos/estilo.css">
+
+
+
+
+<!-- <script type="text/javascript" src="./scriptCarousel.js"></script> -->
+
 <style>
   
 </style>
@@ -47,10 +21,9 @@
     <div class="topnav">
       <a href="#home" class="active">Logo</a>
       <div id="myLinks">
-        <a href="#news"><img class="icono" src="../img/estadisticas.svg"></a>
-        <a href="#contact"><img class="icono" src="../img/ajustes.svg"></a>
-        <a href="#about"><img class="icono" src="../img/usuario.svg"></a>
-        <a href="includes/logout.php"><img class="icono" src="../img/cruzar.svg"></a>
+        <a href="#news" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
+       <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
+        <a href="#about"><img class="icono" src="./img/usuario.svg"></a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -62,9 +35,35 @@
 
 
 <div class="contenedor-juego">
-  
+
+<!-- /////////////////////////////////////////// -->
+
     <div id="operacion"></div>
-        
+      <!-- ///////////////////////////////////////////
+    <div id="spinner"> 
+      Loading...
+    </div>
+
+
+    <div id="carousel">
+ 
+      <div class="operacion">⬇️</div>
+      <div class="operacion">21</div>
+      <div class="operacion">3</div>
+      <div class="operacion">5</div>
+      <div class="operacion">6</div>
+      <div class="operacion">7</div>
+      <div class="operacion">8</div>
+      <div class="operacion">11</div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="prev">&uarr; Prev</button>
+      <button id="next">&darr; Next</button>
+    </div>
+-->
+ 
     <label id="texto1" for="introducido">
         <input id="introducido" type="number" placeholder="escribe aquí la respuesta"/>
     </label>
@@ -87,7 +86,11 @@
     <br>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="calculoMental.js"></script>
+    <script type="text/javascript" src="./calculoMental.js"></script>
+    
+
+<!-- /////////////////////////////////////////// -->
+
 
 </div>
 

@@ -11,7 +11,7 @@
     --link-color-hover: #c3cff4;
     --link-color-active: #fff;
     --link-color-active-bg: #1f1c2e;
-    --tarjeta-principal: #fff;
+    --tarjeta-principal: rgba(255, 255, 255, 0.8);
     --message-box-hover: #fafcff;
     --message-box-border: #e9ebf0;
     --more-list-bg: #fff;
@@ -22,7 +22,6 @@
     --star: #1ff1c2e;
     --message-btn: #fff;
 
-
     }
 
   body {
@@ -32,6 +31,10 @@
     background-color: var(--fondo);
     font-family: "DM Sans", sans-serif;
     /*color: var(--main-color);*/
+    background-image: url("../img/fondo-math.png");
+
+    box-sizing:border-box;
+
   }
 
   .mobile-container {
@@ -58,6 +61,7 @@
 
   .topnav #myLinks {
     display: none;
+    float: right;
   }
 
   .topnav a {
@@ -65,12 +69,18 @@
     color: var(--main-color);
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .icono {
-    width: 1em;
-    height: 1em;
+    width: 0.87em;
+    
+  }
+
+  .icono2 {
+    
+    margin:0px;
+    padding:0px;
   }
 
   .topnav a.icon {
@@ -107,3 +117,14 @@
     text-align: center;
     
   }
+
+
+/*carousel de operaciones*/
+#carouselWrapper {
+  position: relative;
+  overflow: hidden;
+}
+#carousel {
+  position: absolute;
+  visibility: hidden;
+}

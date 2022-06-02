@@ -68,7 +68,6 @@
            </div>
            <div class="derecha">
                <input type="text" id="email" name="usuario" placeholder="Introduce tu email(Usuario)..." onblur="validaEmail()" required />
-               <!-- TODO mejor poner el email -->
               <!--  <input type="email" id="email" name="usuario" placeholder="Introduce tu email(Usuario)..." onblur="validaEmail()" required /> -->
                <p id="emailMal" class="error"></p>
            </div>
