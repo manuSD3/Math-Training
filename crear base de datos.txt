@@ -26,6 +26,7 @@ CREATE TABLE Puntuaciones (
 
 
 //////////////////////TESTEO
+(horas desordenadas (no va bien asi))
 INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
 VALUES 
     ('2022-05-30 02:20:55', 99.15, 'manuerubstep@gmail.com'),
@@ -33,3 +34,57 @@ VALUES
     ('2022-05-28 02:20:55', 98.15, 'manuerubstep@gmail.com'),
     ('2022-05-27 02:20:55', 50.15, 'manuerubstep@gmail.com'),
     ('2022-05-26 02:20:55', 81.15, 'manuerubstep@gmail.com')
+;
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-05-30 02:20:55', 99.15, 'prueba@gmail.com'),
+    ('2022-06-29 02:20:55', 220.15, 'prueba@gmail.com'),
+    ('2022-06-29 01:20:55', 110.15, 'prueba@gmail.com'),
+    ('2022-06-28 02:20:55', 98.15, 'prueba@gmail.com'),
+    ('2022-06-26 02:20:55', 50.15, 'prueba@gmail.com'),
+    ('2022-06-27 15:20:55', 81.15, 'prueba@gmail.com')
+;
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-06-02 05:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-06-02 04:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-06-03 14:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-06-03 15:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-06-04 16:20:55', 81.15, 'manuerubstep@gmail.com'),
+    ('2022-06-04 15:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-06-05 16:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-06-05 17:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-06-06 18:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-06-06 19:20:55', 81.15, 'manuerubstep@gmail.com')
+;
+(horas ordenadas (va bien))
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-05-30 02:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-05-29 02:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-05-28 02:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-05-27 02:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-05-26 02:20:55', 81.15, 'manuerubstep@gmail.com')
+;
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-05-30 02:20:55', 99.15, 'prueba@gmail.com'),
+    ('2022-06-29 01:20:55', 220.15, 'prueba@gmail.com'),
+    ('2022-06-29 02:20:55', 110.15, 'prueba@gmail.com'),
+    ('2022-06-28 02:20:55', 98.15, 'prueba@gmail.com'),
+    ('2022-06-26 02:20:55', 50.15, 'prueba@gmail.com'),
+    ('2022-06-27 15:20:55', 81.15, 'prueba@gmail.com')
+;
+INSERT INTO puntuaciones (fecha, tiempoEmpleado, emailUsuario)
+VALUES 
+    ('2022-06-02 04:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-06-02 05:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-06-03 14:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-06-03 15:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-06-04 15:20:55', 81.15, 'manuerubstep@gmail.com'),
+    ('2022-06-04 16:20:55', 99.15, 'manuerubstep@gmail.com'),
+    ('2022-06-05 16:20:55', 198.15, 'manuerubstep@gmail.com'),
+    ('2022-06-05 17:20:55', 98.15, 'manuerubstep@gmail.com'),
+    ('2022-06-06 18:20:55', 50.15, 'manuerubstep@gmail.com'),
+    ('2022-06-06 19:20:55', 81.15, 'manuerubstep@gmail.com')
+;

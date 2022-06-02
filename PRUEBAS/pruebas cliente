@@ -1,7 +1,0 @@
-por ahora, puedes actualizar svn y compilar y arrancar el servicio rest, y luego arrancar la interfaz de usuario de involved
-para probar a consultar, filtrar, dar de alta, editar y eliminar interesados
-a ver si encuentras fallos raros
-ahora mismo la creación, edición y eliminación de datos de contacto del interesado no irá a funcionar, esa parte la puedes dejar
-
-prueba a intentar definir varios interesados con el mismo NIF, modificarlos, eliminar, dejar campos obligatorios en blanco, etc
-a ver si cuando se eliminan siguen apareciendo en el listado, cosas así

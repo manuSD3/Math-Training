@@ -21,3 +21,6 @@ http://www.forosdelweb.com/f13/calcular-tiempo-entre-dos-horas-hh-mm-ss-1091077/
 
 //input oculto
 https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_hidden
+
+//grafica con js y php
+https://www.youtube.com/watch?v=2zgxbiX0tbs
