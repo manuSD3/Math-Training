@@ -11,10 +11,10 @@
 
     <script>
     var Carousel = {
-        width: 100,     // Images are forced into a width of this many pixels.
-        numVisible: 2,  // The number of images visible at once.
-        duration: 600,  // Animation duration in milliseconds.
-        padding: 2      // Vertical padding around each image, in pixels.
+        width: "1em",     // Images are forced into a width of this many pixels.
+        numVisible: 3,  // The number of images visible at once.
+        duration: 200,  // Animation duration in milliseconds.
+        padding: 4      // Vertical padding around each image, in pixels.
     };
     
     function rotateForward() {
@@ -24,6 +24,8 @@
             lastChild = children[children.length - 1];
         carousel.insertBefore(lastChild, firstChild);
     }
+
+    //hacia delante (next)
     function rotateBackward() {
         var carousel = Carousel.carousel,
             children = carousel.children,
@@ -32,6 +34,7 @@
         carousel.insertBefore(firstChild, lastChild.nextSibling);
     }
     
+    //hace la animacion
     function animate(begin, end, finalTask) {
         var wrapper = Carousel.wrapper,
             carousel = Carousel.carousel,
@@ -54,8 +57,11 @@
     }
     
     window.onload = function () {
+        //oculta el "cargando..."
         document.getElementById('spinner').style.display = 'none';
+
         var carousel = Carousel.carousel = document.getElementById('carousel'),
+            //array de divs
             images = carousel.getElementsByClassName('operacion'),
             numImages = images.length,
             imageWidth = Carousel.width,
@@ -63,7 +69,9 @@
             imageHeight = imageWidth / aspectRatio,
             padding = Carousel.padding,
             rowHeight = Carousel.rowHeight = imageHeight + 2 * padding;
+
         carousel.style.width = imageWidth + 'px';
+
         for (var i = 0; i < numImages; ++i) {
         var image = images[i],
             frame = document.createElement('div');
@@ -154,7 +162,6 @@
   </div>
   -->
   <div id="carousel">
-      
     <div class="operacion">⬇️</div>
     <div class="operacion">21</div>
     <div class="operacion">3</div>
@@ -167,8 +174,8 @@
 
 
   <div class="buttons">
-    <button id="prev">&uarr; Prev</button>
-    <button id="next">&darr; Next</button>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
   </div>
 
 </body>

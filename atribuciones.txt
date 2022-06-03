@@ -24,3 +24,13 @@ https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_hidden
 
 //grafica con js y php
 https://www.youtube.com/watch?v=2zgxbiX0tbs
+https://www.chartjs.org/
+
+//input meses
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month
+
+//carousel de texto
+https://codepen.io/Archibald2/embed/NWdmbxX?#result-box
+
+//icono web
+<a href="https://www.flaticon.com/free-icons/maths" title="maths icons">Maths icons created by Freepik - Flaticon</a>

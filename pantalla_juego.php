@@ -19,7 +19,8 @@
 <body>
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a href="#home" class="active">Logo</a>
+      <a href="#home" class="active">logotipo</a>
+      <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
       <div id="myLinks">
         <a href="#news" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
        <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
@@ -39,15 +40,29 @@
 
 <!-- /////////////////////////////////////////// -->
 
-    <div id="operacion"></div>
-      <!-- ///////////////////////////////////////////
-    <div id="spinner"> 
-      Loading...
+  
+
+    <div id="operacion">
+
+        <!-- <div class="slider">
+        <div class="view">
+          <div class="container" style="margin-left:0px;">
+            <p class="box">Aenean risus est, porttitor vel placerat.</p>
+            <p class="box">>Morbi pellentesque, mauris interdum porta tincidunt.</p>
+            <p class="box">Donec viverra tortor sed nulla. Phasellus nec magna.</p>
+            <p class="box">Nunc gravida nonummy felis.</p>
+            <p class="box">Vestibulum fringilla, lectus id viverra malesuada.</p>
+          </div>
+        </div>
+      </div> -->
+
     </div>
+      
+     
 
 
     <div id="carousel">
- 
+  <!-- ///////////////////////////////////////////
       <div class="operacion">⬇️</div>
       <div class="operacion">21</div>
       <div class="operacion">3</div>
@@ -56,17 +71,17 @@
       <div class="operacion">7</div>
       <div class="operacion">8</div>
       <div class="operacion">11</div>
-
+    ///////////////////////////////////////////-->
     </div>
-
+<!--
     <div class="buttons">
       <button id="prev">&uarr; Prev</button>
       <button id="next">&darr; Next</button>
     </div>
 -->
  
-    <label id="texto1" for="introducido">
-        <input id="introducido" type="number" placeholder="escribe aquí la respuesta"/>
+    <label id="texto1" for="introducido" style="display:none">
+        <input id="introducido" type="number" placeholder="escribe aquí la respuesta" style="display:none" autofocus/>
     </label>
 
     <!-- <input type="number" id="introducido" id="introducido" /> -->
@@ -76,12 +91,12 @@
     <div id="aciertos"></div>
     <div id="fallos"></div>
 
-    <div id="mensaje-final"></div>
+    <div id="mensaje-final" style="display:none"></div>
 
     </br>
     </br>
 
-    <input type="button" id="boton-jugar" value="Jugar" onclick="return jugar()" />
+    <input type="button" id="boton-jugar" class="boton" value="Jugar" onclick="setTimeout(function(){return jugar();}, 100);" />
     
     <br>
     <br>
