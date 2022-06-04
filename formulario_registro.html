@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./estilos/estilo.css">
-<!-- <script type="text/javascript" src="validacion_registro.js"></script> -->
+<script type="text/javascript" src="validacion_registro.js"></script>
 <style>
   
 </style>
@@ -26,7 +26,7 @@
       </div>
   
   <!-- Simulate a smartphone / tablet look -->
-<div class="mobile-container">
+<div class="mobile-container" style="height:auto">
 
 
 <div class="contenedor-juego">
@@ -35,77 +35,54 @@
     <form id="formulario" name="registro" action="formulario_registro.php" method="post" onsubmit="return validarTodo();">
         <h1>Formulario de registro:</h1>
 
-        <div class="fila">
-            <div class="izquierda">
-                <label for="nombre" required>Nombre completo:</label>  
-            </div>
-            <div class="derecha">
-                <input type="text" id="nombre" name="nombre" onblur="validaNombre()" required/>
-                <p id="nombreMal" class="error"></p>
-            </div>
-        </div>
+        <div class="input-group">
+            <!-- <input required="" type="text" name="text" autocomplete="off" class="input">
+            <label class="user-label">First Name</label> -->
+          <br><br>
+            <input type="text" id="nombre" name="nombre" onblur="validaNombre()" class="input" required=""/>
+            <label for="nombre" class="user-label" required>Nombre completo:</label>  
+            <p id="nombreMal" class="error"></p>
+    
+            <input type="number" id="telefono" name="telefono" onblur="validaTelefono()" class="input" required="" />
+            <label for="telefono" class="user-label">Teléfono de contacto:</label>
+            <p id="telefonoMal" class="error"></p>
         
-        <div class="fila">
-            <div class="izquierda">
-                <label for="telefono">Teléfono de contacto:</label>
-            </div>
-            <div class="derecha">
-                <input type="number" id="telefono" name="telefono" onblur="validaTelefono()" required />
-                <p id="telefonoMal" class="error"></p>
-            </div>
-        </div>
-       
-        <div class="fila">
-            <div class="izquierda">
-                <label for="email">Email (Usuario):</label>
-            </div>
-            <div class="derecha">
-                <input type="email" id="email" name="email" onblur="validaEmail()" required />
-                <p id="emailMal" class="error"></p>
-            </div>
-        </div>
+            <input type="text" id="email" name="email" onblur="validaEmail()" class="input" required="" />
+            <label for="email" class="user-label">Email:</label>
+            <p id="emailMal" class="error"></p>
+    
+            <input type="password" id="password" name="pass" onblur="validaPassword(); validaPassword2()" class="input" required="" />
+            <label for="pass" class="user-label">Contraseña:</label>
+            <p id="contraseñaMal" class="error"></p>
         
-        <div class="fila">
-            <div class="izquierda">
-                <label for="pass">Contraseña:</label>
-            </div>
-            <div class="derecha">
-                <input type="password" id="password" name="pass" onblur="validaPassword(); validaPassword2()" required />
-                <p id="contraseñaMal" class="error"></p>
-            </div>
-        </div>
-       
-        <div class="fila">
-            <div class="izquierda">
-                <label for="pass2">Repita su contraseña:</label>
-            </div>
-            <div class="derecha">
-                <input type="password" id="password2" name="pass2" onblur="validaPassword2()" required />
-                <p id="contraseña2Mal" class="error"></p>
-            </div>
+ 
+            <input type="password" id="password2" name="pass2" onblur="validaPassword2()" class="input" required="" />
+            <label for="pass2" class="user-label">Repita su contraseña:</label>
+            <p id="contraseña2Mal" class="error"></p>
+           
         </div>
 
         <div class="tabla">
             <div id="izq">
                 <p>Sexo: </br>
                     <div class="margenSup">
-                        <p>
+                        
                             <input type="radio" id="hombre" name="genero" value="M" onblur="validaSexo()" required/> <label for="hombre">Hombre</label>
-                        </p> 
-                        <p>
+                         
+                        
                             <input type="radio" id="mujer" name="genero" value="F" onblur="validaSexo()" required/>  <label for="mujer">Mujer</label>
-                        </p>
-                        <p>
+                        
+                        
                             <input type="radio" id="otro" name="genero" value="I" onblur="validaSexo()" required/>
                             <label for="otro">Intersexual</label>
-                        </p>
+                        
                         <p id="sexoMal" class="error"></p>
                     </div>
                 </p>
             </div>
             
         </div>
-        <br>
+    
 
         <input class="boton" type="submit" value="Enviar" />
         <input class="boton" type="reset" onclick="limpiarErrores()" value="Limpiar formulario" />

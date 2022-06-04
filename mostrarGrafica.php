@@ -135,7 +135,7 @@ if ($conexion -> connect_errno){
     <br><br>
     <input type="month" id="mesGrafica" name="mesGrafica">
     <br><br>
-    <input type="submit" value="Ver gráfica">
+    <input type="submit" class="boton" value="Ver gráfica">
 </form>
 
 

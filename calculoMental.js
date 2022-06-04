@@ -8,7 +8,7 @@ document.getElementById("introducido").style.display = 'none';
 document.getElementById("correctoOno").style.display = 'none';
 document.getElementById("mensaje-final").style.display = ''; */
 
-let numOperaciones = 20;
+let numOperaciones = 5;
 //let operaciones = [22][5];
 var operaciones = new Array(22);
 let introducido;
@@ -24,7 +24,9 @@ var i = 1;
 
 var _self = this;
 
-var tiempoDeEspera;
+//var tiempoDeEspera;
+
+
 /*
 function delay(callback, ms) {
     var timer = 0;
@@ -169,20 +171,21 @@ function jugar() {
                 document.getElementById("mensaje-final").style.display = '';
                 
                 document.getElementById("mensaje-final").innerHTML= (
-                "La partida ha terminado <br> Numero de fallos: "
+                "La partida ha terminado. <br><br> Numero de fallos: "
                 +fallos
                 +"<br> Numero de aciertos: "
                 +aciertos
-                +"<br><br>Tiempo empleado: "
+                +"<br><br>Tiempo empleado: <br>"
                 +resultSegundos
                 +" segundo(s) <br>"
-                +"<br>Resultado final (penalización de 20 segundos por cada fallo): <br>"
+                +"<br>Resultado final<br>(penalización de 20 segundos por cada fallo): <br><br>"
                 +resultFinalSegundos
-                
+                +"<br><br><br>"
                 +"<form action='insertarPuntuacion.php' method='post'>"
                     +"<input type='hidden' id='puntuacion' name='puntuacion' value="+resultFinalSegundos+">"
-                    +"<input type='submit' value='Guardar puntuación y volver'>"
+                    +"<input type='submit' class='boton' style='font-size:1em' value='Guardar y volver'>"
                 +"</form>"
+                
 
                 
                 );
@@ -206,7 +209,7 @@ function jugar() {
 function crearListaHTML(operaciones) {
 
     let listaDivs=
-    +"<div class='slider'>"
+    "<div class='slider'>"
     +"<div class='view'>"
     +"<div class='container' style='margin-left:0px;'>";
 
@@ -238,11 +241,7 @@ function shift(direction) {
 
 //pasar a la siguiente operación
 function siguienteOperacion() {
-    
-    
-    
-    
-   
+
    //document.getElementById("correctoOno").innerHTML = "  ";
     let campoTexto = document.getElementById("introducido").value = null;
 
