@@ -36,30 +36,15 @@ try {
    
     // enviarCorreo($email, $pass);
 
-    header('Location: FormularioLogin.html');
+    header('Location: index.html');
 }catch (PDOException $e){
-    // echo "Error: ".$e->getMessage();
+     echo "Error: ".$e->getMessage();
     # Error te manda de nuevo al formulario
     header('Location: formulario_registro.html');
 }
     }
 
 
-    
-
-/*
-# Enviar correo // Configurar xampp para que funcione 
-# https://www.youtube.com/watch?v=5NY603OX-eQ
-
-function enviarCorreo($email, $pass){
-    $enviar_a = $email;
-    $asunto = 'Registro gym';
-    $mensaje_correo = 'Gracias por registrarte en nuestro gym, Usuario: '.$email.' Contraseña: '.$pass;
-
-    $email = "From: XXXXX.@gmail.com";
-    mail($enviar_a, $asunto, $mensaje_correo, $email);
-}
-*/
 ?>
 
 

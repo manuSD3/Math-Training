@@ -1,7 +1,5 @@
-<!-- //utilizar solo este y no hacer nada si no isset -->
-
-
 <?php
+
 $conexion = new mysqli('localhost', 'root', '','mathtraining');
 
 $conexion -> set_charset('utf8');
@@ -18,66 +16,63 @@ $fechaSeparada = explode("-", $fecha);
 $anno = $fechaSeparada[0]; 
 $mes = $fechaSeparada[1]; 
 
-
-
-// Determinar si la base de datos está conectada
 if ($conexion -> connect_errno){
-   header('Location: FormularioLogin.html');
+  echo "Error al conectarse a la bd";
+   header('Location: index.html');
    
 }else {
-/////////////////////////////////
+    
     session_start();
     $email =  $_SESSION['usuario'];
-
+   
     if (empty($email)){
-        header('Location: FormularioLogin.html');
-/////////////////////////////////
+      echo "no hay sesion abierta";
+        header('Location: index.html');
+
     }else {
             try {
+              $stmt = $conexion->prepare("SELECT DATE(fecha) as fecha1, tiempoEmpleado FROM puntuaciones WHERE emailUsuario = ? AND MONTH(fecha) = ? AND YEAR(fecha) = ?  GROUP BY fecha1 ORDER BY fecha ASC");
 
-                $stmt = $conexion->prepare("SELECT DATE(fecha) as fecha1, tiempoEmpleado FROM puntuaciones WHERE emailUsuario = ? AND MONTH(fecha) = ? AND YEAR(fecha) = ?  GROUP BY fecha1 ORDER BY fecha ASC");
+              //$stmt = $conexion->prepare("SELECT email, contraseña FROM usuarios WHERE email = ? AND contraseña = ?");
+              $stmt->bind_param('sss',$email,$mes,$anno);
+              $stmt->execute();
+              ////////
+              $result = $stmt->get_result();
 
-                //$stmt = $conexion->prepare("SELECT email, contraseña FROM usuarios WHERE email = ? AND contraseña = ?");
-                $stmt->bind_param('sss',$email,$mes,$anno);
-                $stmt->execute();
-                ////////
-                $result = $stmt->get_result();
+              /* foreach ($result as $a) {
+                  $dias[] = $a['fecha'];
+                  $tiempos[] = $a['tiempoEmpleado'];
+              } */
 
-                /* foreach ($result as $a) {
-                    $dias[] = $a['fecha'];
-                    $tiempos[] = $a['tiempoEmpleado'];
-                } */
+              while ($fila = $result->fetch_assoc()) {
 
-                while ($fila = $result->fetch_assoc()) {
+                  //2022-06-02 01:56:54
+                  //2022-06-02 
+                  $separacion1 = explode("-", $fila['fecha1']);
+                  //$separacion2 = explode("-", $separacion1[0]);
 
-                    //2022-06-02 01:56:54
-                    //2022-06-02 
-                    $separacion1 = explode("-", $fila['fecha1']);
-                    //$separacion2 = explode("-", $separacion1[0]);
+                  $dias[] = $separacion1[2];
+                  $tiempos[] = $fila['tiempoEmpleado'];
 
-                    $dias[] = $separacion1[2];
-                    $tiempos[] = $fila['tiempoEmpleado'];
+              }
 
-                }
+              //$fila = $result->fetch_assoc();
+              ////////
 
-                //$fila = $result->fetch_assoc();
-                ////////
+              if (empty($dias)){
+                  echo "Esa fecha no tiene datos";
 
-                if (empty($dias)){
-                    echo "Esa fecha no tiene datos";
+              }else {
+                  
+                  //muestra la tabla
+                  //echo "ha funcionado";
+                  /* echo $anno; 
+                  echo $mes;
+                  echo $fila['tiempoEmpleado'];
+                  echo $fila['tiempoEmpleado'];
+                  echo $fila['fecha']; */
 
-                }else {
-                    
-                    //muestra la tabla
-                    //echo "ha funcionado";
-                    /* echo $anno; 
-                    echo $mes;
-                    echo $fila['tiempoEmpleado'];
-                    echo $fila['tiempoEmpleado'];
-                    echo $fila['fecha']; */
-
-                }
-
+              }
             }catch (PDOException $e){
             echo "Error: ".$e->getMessage();
         }
@@ -114,11 +109,12 @@ if ($conexion -> connect_errno){
 <body>
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a href="#home" class="active">Logo</a>
+      <a href="pantalla_juego.php" class="active">logotipo</a>
+      <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
       <div id="myLinks">
-        <a href="#news" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
-       <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
-        <a href="#about"><img class="icono" src="./img/usuario.svg"></a>
+        <a href="pantalla_juego.php" class="icono2"><img class="icono" src="./img/casa.svg"></a>
+       <!-- <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
+        <a href="#about"><img class="icono" src="./img/usuario.svg"></a> -->
         <a href="cerrarSesion.php"><img class="icono" src="./img/cruzar.svg"></a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">

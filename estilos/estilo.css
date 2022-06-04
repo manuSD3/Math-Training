@@ -112,6 +112,17 @@
     background-color: var(--rojo);
     color: white;
   }
+/* 
+  .logo {
+    
+      color: transparent;
+      background: #666666;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+    
+  } */
 
   .feedback{
       width: 10px;
@@ -229,9 +240,9 @@
 .view {
   /* width: 403px;  */  /* extra 2px for border */
   /* border: 2px solid rgb(66, 66, 66); */
-  border-radius: 32px;
-  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  /* border-radius: 32px; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  /* box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5); */
   overflow: hidden;
 
   margin-bottom: 0.5em;
@@ -244,8 +255,9 @@
 }
 .box {
   width: 2.51em;
-  /* border-right: 2px solid rgb(85, 85, 85); */
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-right: 2px solid rgb(85, 85, 85);
+  /* border-left: 1px solid rgb(85, 85, 85); */
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
   margin: 0;
   padding-left: 0;
   padding-right: 0;

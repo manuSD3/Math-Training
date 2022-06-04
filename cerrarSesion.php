@@ -1,3 +1,8 @@
 <?php
+  session_start();
+  session_unset();
   session_destroy();
-  header('Location: FormularioLogin.html');
+
+  
+  header('Location: index.html');
+?>

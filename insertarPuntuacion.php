@@ -1,23 +1,19 @@
 <?php
     //Recoger los datos del formulario
     $puntuacion = $_POST['puntuacion'];
-    
-    $email = 'prueba@gmail.com';
 
-
-    
     $conexion = new mysqli('localhost', 'root', '','mathtraining');
 
 if ($conexion -> connect_errno){
   
-   header('Location: FormularioLogin.html');
+   header('Location: index.html');
 }else {
     
     session_start();
     $usuario =  $_SESSION['usuario'];
    
     if (empty($usuario)){
-        header('Location: FormularioLogin.html');
+        header('Location: index.html');
 
     }else {
             try {
@@ -45,7 +41,7 @@ try {
 }catch (PDOException $e){
     echo "Error: ".$e->getMessage();
     # Error te manda de nuevo al formulario
-    //header('Location: formulario_registro.html');
+    header('Location: index.html');
 }
     //}
 

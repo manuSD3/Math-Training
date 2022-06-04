@@ -1,3 +1,39 @@
+<?php
+$conexion = new mysqli('localhost', 'root', '','mathtraining');
+
+if ($conexion -> connect_errno){
+  echo "Error al conectarse a la bd";
+   header('Location: index.html');
+   
+}else {
+    
+    session_start();
+    $usuario =  $_SESSION['usuario'];
+   
+    if (empty($usuario)){
+      echo "no hay sesion abierta";
+        header('Location: index.html');
+
+    }else {
+            try {
+                $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE email = ?");
+                $stmt->bind_param('s',$usuario);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $user = $result->fetch_assoc();
+
+              //<?php  echo $user['nombre'];
+
+              //echo "sesion abierta de ".$user['nombre'];
+
+            }catch (PDOException $e){
+            echo "Error: ".$e->getMessage();
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,12 +55,12 @@
 <body>
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a href="#home" class="active">logotipo</a>
+      <a href="pantalla_juego.php" class="active">logotipo</a>
       <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
       <div id="myLinks">
-        <a href="#news" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
-       <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
-        <a href="#about"><img class="icono" src="./img/usuario.svg"></a>
+        <a href="estadisticas.php" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
+       <!-- <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
+        <a href="#about"><img class="icono" src="./img/usuario.svg"></a> -->
         <a href="cerrarSesion.php"><img class="icono" src="./img/cruzar.svg"></a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -44,42 +80,9 @@
 
     <div id="operacion">
 
-        <!-- <div class="slider">
-        <div class="view">
-          <div class="container" style="margin-left:0px;">
-            <p class="box">Aenean risus est, porttitor vel placerat.</p>
-            <p class="box">>Morbi pellentesque, mauris interdum porta tincidunt.</p>
-            <p class="box">Donec viverra tortor sed nulla. Phasellus nec magna.</p>
-            <p class="box">Nunc gravida nonummy felis.</p>
-            <p class="box">Vestibulum fringilla, lectus id viverra malesuada.</p>
-          </div>
-        </div>
-      </div> -->
-
     </div>
       
-     
-
-
-    <div id="carousel">
-  <!-- ///////////////////////////////////////////
-      <div class="operacion">⬇️</div>
-      <div class="operacion">21</div>
-      <div class="operacion">3</div>
-      <div class="operacion">5</div>
-      <div class="operacion">6</div>
-      <div class="operacion">7</div>
-      <div class="operacion">8</div>
-      <div class="operacion">11</div>
-    ///////////////////////////////////////////-->
-    </div>
-<!--
-    <div class="buttons">
-      <button id="prev">&uarr; Prev</button>
-      <button id="next">&darr; Next</button>
-    </div>
--->
- 
+  
     <label id="texto1" for="introducido" style="display:none">
         <input id="introducido" type="number" placeholder="escribe aquí la respuesta" style="display:none" autofocus/>
     </label>

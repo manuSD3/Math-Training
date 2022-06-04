@@ -64,7 +64,7 @@ function jugar() {
 
 /////    
     crearListaHTML(operaciones);
-    document.getElementById("carousel").style.visibility = "visible";
+    //document.getElementById("carousel").style.visibility = "visible";
 /////
 
     /////    
@@ -224,10 +224,11 @@ function crearListaHTML(operaciones) {
 }
 
 
-
 function shift(direction) {
-    var shifted = parseInt(document.querySelector(".container").style.marginLeft);
-    if ( (direction > 0 && shifted > -4800) || (direction < 0 && shifted < 0) ) {
+    var shifted = document.querySelector(".container").style.marginLeft;
+    shifted = shifted.slice(0, -2);
+    shifted = Number(shifted);
+    if ( (direction > 0 && shifted > -4800)  ) {
         document.querySelector(".container").style.marginLeft = (shifted - 102.39 * direction) + "px";
     }
   }
