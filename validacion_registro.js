@@ -1,25 +1,3 @@
-function cambiarBorde(enviar, elemento) {
-    if (!enviar) {
-        if (elemento != "izq" && elemento != "der") {
-            document.getElementById(elemento).style.border="2px solid #cb2e35";
-            //document.getElementById(elemento).style["boxShadow"]="inset 0px 0px 9px red";
-            document.getElementById(elemento).style["boxShadow"]="0px 0px 9px #cb2e35";
-        } else {
-            document.getElementById(elemento).style.border="2px solid #cb2e35";
-            document.getElementById(elemento).style.width="49%";
-            document.getElementById(elemento).style["boxShadow"]="0px 0px 9px #cb2e35";
-        }
-    } else {
-        if (elemento != "izq" && elemento != "der") {
-            document.getElementById(elemento).style.border="1px solid black";
-            document.getElementById(elemento).style["boxShadow"]="inset 0px 0px 0px red";
-        } else {
-            document.getElementById(elemento).style.border="none";
-            document.getElementById(elemento).style["boxShadow"]="none";
-        }
-    }
-}
-
 function validaNombre() {
     let nombre = document.forms["registro"]["nombre"].value;
     const patron = /^([a-zA-Záéíóú']+ [a-zA-Záéíóú' ]+)$/gm;
@@ -56,57 +34,7 @@ function validaNombre() {
     return enviar;
 }
 
-/*
-function calcularEdad(fecha_nac) {     //deberia recibir una string en formato aaaa-mm-dd
-    //metodo que divide un string en arrays si le indicamos el caracter separador
-    let lista = fecha_nac.split("-");
 
-    let dia = lista[2];
-    let mes = lista[1];
-    let anho = lista[0];
-    
-    let fechaActual = new Date();
-    //esto se hace porque el metodo getYear cuenta desde el año 1900
-    let anhoActual = fechaActual.getYear() + 1900;
-    let mesActual = fechaActual.getMonth();
-    let diaActual = fechaActual.getDate();
-    
-    let edad = anhoActual - anho;
-    //condicion para tener en cuenta dia y mes
-    if ((mesActual - (mes-1)) < 0 || ((mesActual - (mes-1)) == 0 && (diaActual - dia) < 0)) {
-        edad--;
-    }
-
-    console.log(edad);
-
-    return edad;
-}
-
-function validaFecha() {
-    let fecha_nac = document.forms["registro"]["fecha_nac"].value;
-    let enviar = false;
-
-    let edad = calcularEdad(fecha_nac);
-
-    if (fecha_nac == "") {
-        document.getElementById("fechaMal").innerHTML = "La fecha es obligatoria";
-    
-    } else if (edad > 130 || edad < 0) {
-        document.getElementById("fechaMal").innerHTML = "¿Seguro que has escrito bien el año?";
-
-    } else if (edad < 16) {
-        document.getElementById("fechaMal").innerHTML = "Para inscribirte en el gym debes tener al menos 16 años. Podría afectar a tu crecimiento :v";
-    
-    } else {
-        document.getElementById("fechaMal").innerHTML = "";
-        enviar = true;
-    }
-
-    cambiarBorde(enviar, "fecha_nac");
-
-    return enviar;
-}
- */
 function validaTelefono() {
 
     let telefono = document.forms["registro"]["telefono"].value;
@@ -154,13 +82,6 @@ function validaEmail() {
 
     return enviar;
 }
-
-/*
-<svg height="210" width="1000">
-  <line x1="500" y1="0" x2="0" y2="0" style="stroke:rgb(255,0,0);stroke-width:10" />
-  Sorry, your browser does not support inline SVG.
-</svg>
-*/
 
 function validaPassword() {
     let password = document.forms["registro"]["password"].value;
@@ -246,25 +167,30 @@ function validaSexo() {
     return enviar;
 }
 
-/* function validaActividades() {
-    let enviar = false;
 
-    let sala = document.getElementById("sala");
-    let yoga = document.getElementById("yoga");
-    let spa = document.getElementById("spa");
-    let natacion = document.getElementById("natacion");
 
-    if (!sala.checked && !yoga.checked && !spa.checked && !natacion.checked){
-        document.getElementById("actividadesMal").innerHTML = "Elige al menos una actividad";
+
+function cambiarBorde(enviar, elemento) {
+    if (!enviar) {
+        if (elemento != "izq" && elemento != "der") {
+            document.getElementById(elemento).style.border="2px solid #cb2e35";
+            //document.getElementById(elemento).style["boxShadow"]="inset 0px 0px 9px red";
+            document.getElementById(elemento).style["boxShadow"]="0px 0px 9px #cb2e35";
+        } else {
+            document.getElementById(elemento).style.border="2px solid #cb2e35";
+            document.getElementById(elemento).style.width="49%";
+            document.getElementById(elemento).style["boxShadow"]="0px 0px 9px #cb2e35";
+        }
     } else {
-        document.getElementById("actividadesMal").innerHTML = "";
-        enviar = true;
+        if (elemento != "izq" && elemento != "der") {
+            document.getElementById(elemento).style.border="1px solid black";
+            document.getElementById(elemento).style["boxShadow"]="inset 0px 0px 0px red";
+        } else {
+            document.getElementById(elemento).style.border="none";
+            document.getElementById(elemento).style["boxShadow"]="none";
+        }
     }
-
-    cambiarBorde(enviar, "der");
-
-    return enviar;
-} */
+}
 
 //si esta funcion devuelve false, la informacion no será enviada al pulsar el boton enviar
 function validarTodo() {
@@ -311,8 +237,3 @@ function limpiarErrores() {
 
 }
 
-/*
-console.log("Hello");
-setTimeout(() => { console.log("World!"); }, 2000);
-console.log("Goodbye!");
-*/

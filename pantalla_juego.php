@@ -3,7 +3,7 @@ $conexion = new mysqli('localhost', 'root', '','mathtraining');
 
 if ($conexion -> connect_errno){
   echo "Error al conectarse a la bd";
-   header('Location: index.html');
+   header('Location: index.php');
    
 }else {
     
@@ -12,7 +12,7 @@ if ($conexion -> connect_errno){
    
     if (empty($usuario)){
       echo "no hay sesion abierta";
-        header('Location: index.html');
+        header('Location: index.php');
 
     }else {
             try {
@@ -55,8 +55,8 @@ if ($conexion -> connect_errno){
 <body>
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a href="pantalla_juego.php" class="active">logotipo</a>
-      <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
+      <a href="pantalla_juego.php" class="active">Math Training</a>
+      <!-- <a href="#home" class="active"><img class="icono" src="./img/Math Training.png"></a> -->
       <div id="myLinks">
         <a href="estadisticas.php" class="icono2"><img class="icono" src="./img/estadisticas.svg"></a>
        <!-- <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
@@ -89,7 +89,7 @@ if ($conexion -> connect_errno){
             <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
         </g>
     </svg> -->
-    <input placeholder="escribe aquí la respuesta" type="number" class="input2">
+    <!-- <input placeholder="escribe aquí la respuesta" type="number" class="input2"> -->
     </div>
   
     <label id="texto1" for="introducido" style="display:none">

@@ -6,14 +6,14 @@
 
 if ($conexion -> connect_errno){
   
-   header('Location: index.html');
+   header('Location: index.php');
 }else {
     
     session_start();
     $usuario =  $_SESSION['usuario'];
    
     if (empty($usuario)){
-        header('Location: index.html');
+        header('Location: index.php');
 
     }else {
             try {
@@ -41,7 +41,7 @@ try {
 }catch (PDOException $e){
     echo "Error: ".$e->getMessage();
     # Error te manda de nuevo al formulario
-    header('Location: index.html');
+    header('Location: index.php');
 }
     //}
 

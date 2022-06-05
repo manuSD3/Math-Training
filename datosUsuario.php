@@ -3,14 +3,14 @@ $conexion = new mysqli('localhost', 'root', '','mathtraining');
 
 if ($conexion -> connect_errno){
   
-   header('Location: FormularioLogin.html');
+   header('Location: index.php');
 }else {
     
     session_start();
     $usuario =  $_SESSION['usuario'];
    
     if (empty($usuario)){
-        header('Location: FormularioLogin.html');
+        header('Location: index.php');
 
     }else {
             try {
@@ -47,7 +47,7 @@ if ($conexion -> connect_errno){
 <body>
     <header class="header">
         <nav>
-            <a href="index.html"> Home </a>
+            <a href="index.php"> Home </a>
             <a href="#"> Photos</a>
             <a href="FormularioDeContacto.html"> Contact </a>
         </nav>

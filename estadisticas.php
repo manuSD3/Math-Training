@@ -6,14 +6,14 @@ $conexion = new mysqli('localhost', 'root', '','mathtraining');
 
 if ($conexion -> connect_errno){
 
-header('Location: index.html');
+header('Location: index.php');
 }else {
 
 session_start();
 $usuario =  $_SESSION['usuario'];
 
 if (empty($usuario)){
-    header('Location: index.html');
+    header('Location: index.php');
 
 }else {
         try {
@@ -46,8 +46,8 @@ if (empty($usuario)){
 <body>
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a href="pantalla_juego.php" class="active">logotipo</a>
-      <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
+      <a href="pantalla_juego.php" class="active">Math Training</a>
+      <!-- <a href="#home" class="active"><img class="icono" src="./img/Math Training.png"></a> -->
       <div id="myLinks">
         <a href="pantalla_juego.php" class="icono2"><img class="icono" src="./img/casa.svg"></a>
        <!-- <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>

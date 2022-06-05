@@ -36,7 +36,7 @@ try {
    
     // enviarCorreo($email, $pass);
 
-    header('Location: index.html');
+    header('Location: index.php');
 }catch (PDOException $e){
      echo "Error: ".$e->getMessage();
     # Error te manda de nuevo al formulario

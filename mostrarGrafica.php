@@ -1,13 +1,9 @@
 <?php
-
 $conexion = new mysqli('localhost', 'root', '','mathtraining');
-
 $conexion -> set_charset('utf8');
-
 
 //tomar el email de la sesion actual
 $email = "";
-
 
 //procesar la fecha obtenida por parametros para separar mes del año en 2 variables
 $fecha = $_POST['mesGrafica'];
@@ -18,7 +14,7 @@ $mes = $fechaSeparada[1];
 
 if ($conexion -> connect_errno){
   echo "Error al conectarse a la bd";
-   header('Location: index.html');
+   header('Location: index.php');
    
 }else {
     
@@ -27,52 +23,27 @@ if ($conexion -> connect_errno){
    
     if (empty($email)){
       echo "no hay sesion abierta";
-        header('Location: index.html');
+        header('Location: index.php');
 
     }else {
             try {
               $stmt = $conexion->prepare("SELECT DATE(fecha) as fecha1, tiempoEmpleado FROM puntuaciones WHERE emailUsuario = ? AND MONTH(fecha) = ? AND YEAR(fecha) = ?  GROUP BY fecha1 ORDER BY fecha ASC");
 
-              //$stmt = $conexion->prepare("SELECT email, contraseña FROM usuarios WHERE email = ? AND contraseña = ?");
               $stmt->bind_param('sss',$email,$mes,$anno);
               $stmt->execute();
-              ////////
               $result = $stmt->get_result();
 
-              /* foreach ($result as $a) {
-                  $dias[] = $a['fecha'];
-                  $tiempos[] = $a['tiempoEmpleado'];
-              } */
-
               while ($fila = $result->fetch_assoc()) {
-
-                  //2022-06-02 01:56:54
-                  //2022-06-02 
+                  //formato fecha: 2022-06-02
                   $separacion1 = explode("-", $fila['fecha1']);
-                  //$separacion2 = explode("-", $separacion1[0]);
-
                   $dias[] = $separacion1[2];
                   $tiempos[] = $fila['tiempoEmpleado'];
-
               }
-
-              //$fila = $result->fetch_assoc();
-              ////////
 
               if (empty($dias)){
                   echo "Esa fecha no tiene datos";
-
-              }else {
-                  
-                  //muestra la tabla
-                  //echo "ha funcionado";
-                  /* echo $anno; 
-                  echo $mes;
-                  echo $fila['tiempoEmpleado'];
-                  echo $fila['tiempoEmpleado'];
-                  echo $fila['fecha']; */
-
               }
+
             }catch (PDOException $e){
             echo "Error: ".$e->getMessage();
         }
@@ -96,8 +67,6 @@ if ($conexion -> connect_errno){
 <script src="chart.js"></script>
 
 
-<!-- <script type="text/javascript" src="./scriptCarousel.js"></script> -->
-
 <style>
   .contenedor-juego {
     
@@ -107,14 +76,13 @@ if ($conexion -> connect_errno){
 </style>
 </head>
 <body>
-    <!-- Top Navigation Menu -->
+    
     <div class="topnav">
-      <a href="pantalla_juego.php" class="active">logotipo</a>
-      <!-- <a href="#home" class="active"><img class="icono" src="./img/logotipo.png"></a> -->
+      <a href="pantalla_juego.php" class="active">Math Training</a>
+      <!-- <a href="#home" class="active"><img class="icono" src="./img/Math Training.png"></a> -->
       <div id="myLinks">
         <a href="pantalla_juego.php" class="icono2"><img class="icono" src="./img/casa.svg"></a>
-       <!-- <a href="#contact"><img class="icono" src="./img/ajustes.svg"></a>
-        <a href="#about"><img class="icono" src="./img/usuario.svg"></a> -->
+       
         <a href="cerrarSesion.php"><img class="icono" src="./img/cruzar.svg"></a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -122,7 +90,7 @@ if ($conexion -> connect_errno){
       </a>
     </div>
 
-<!-- Simulate a smartphone / tablet look -->
+
 <div class="mobile-container">
 
 

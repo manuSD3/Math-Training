@@ -5,16 +5,16 @@ $conexion -> set_charset('utf8');
 
 // Determinar si la base de datos está conectada
 if ($conexion -> connect_errno){
-   header('Location: FormularioLogin.html');
+   header('Location: index.php');
    
 }else {
     $usuario = $_POST['email'];
     $pass = $_POST['pass'];
     
     $pass = hash('sha512', $pass);
+
     if (empty($usuario) || empty($pass)){
-        
-        header('Location: FormularioLogin.html');
+        header('Location: index.php');
     }else {
             try {
                 $stmt = $conexion->prepare("SELECT email, contraseña FROM usuarios WHERE email = ? AND contraseña = ?");

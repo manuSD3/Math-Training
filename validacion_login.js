@@ -1,6 +1,3 @@
-//var intentos = 3;
-//var passwordReal = "123456789";
-
 function validaPassword(){
     let enviar = false;
     let passwordIntroducida = document.forms["login"]["password"].value;
@@ -12,21 +9,6 @@ function validaPassword(){
         enviar=true;
     }
        
-
-    /* } else if (!(passwordReal.valueOf() === passwordIntroducida.valueOf())) {
-        document.getElementById("contraseñaMal").innerHTML = "Contraseña incorrecta. Le queda(n) "+intentos+" intento(s).";
-        intentos--;
-    }
-
-	//(intentos > 0  &&  !contrasenha1.equals(contrasenha2));
-	
-	if (intentos == 0){
-		document.getElementById("contraseñaMal").innerHTML="Intentos agotados. La cuenta ha sido bloqueada por seguridad. Contacte con el admin.";
-	} else if (passwordReal.valueOf() === passwordIntroducida.valueOf()){
-		document.getElementById("contraseñaMal").innerHTML="";
-        enviar=true;
-	} */
-
     cambiarBorde(enviar, "password");
 
     return enviar;
@@ -71,7 +53,6 @@ function validarTodo() {
 function cambiarBorde(enviar, elemento) {
     if (!enviar) {
         document.getElementById(elemento).style.border="2px solid #cb2e35";
-        //document.getElementById(elemento).style["boxShadow"]="inset 0px 0px 9px red";
         document.getElementById(elemento).style["boxShadow"]="0px 0px 9px #cb2e35";
     } else {
         document.getElementById(elemento).style.border="1px solid black";
